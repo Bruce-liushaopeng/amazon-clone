@@ -46,6 +46,10 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/payment">
+            <Header />
+            <h1>I ma payment</h1>
+          </Route>
         </Switch>
 
       </div>
