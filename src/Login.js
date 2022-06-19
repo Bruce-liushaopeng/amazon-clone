@@ -32,7 +32,6 @@ function Login() {
             .then((auth) => {
                 // it successfully created a new user with email and password
                 if (auth) {
-                    console.log(auth);
                     if (auth) {
                         history.push('/')
                     }

@@ -10,7 +10,7 @@ import { useStateValue } from './StateProvider';
 import Payment from './Payment';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-
+import Orders from "./Orders.js"
 const promise = loadStripe('pk_test_51KvXFcENfSnR8Ud3ojfKZcwoKJWb7dSvbSe7ga5S8m7zoSrAoGZqpiI6C2u6IfRRlnAaFcQUP0Hm60qG8WYBGeDg005jQWreoF');
 
 
@@ -19,7 +19,6 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
-      console.log('USER IS >>>', authUser);
 
       if (authUser) {
         //means the user is/was logged in
@@ -44,6 +43,10 @@ function App() {
           <Route exact path="/">
             <Header />
             <Home />
+          </Route>
+          <Route path="/orders">
+            <Header />
+            <Orders />
           </Route>
           <Route path="/checkout">
             <Header />
